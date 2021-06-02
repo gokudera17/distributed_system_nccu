@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myweb-frontend
+  namespace: myweb
+  labels:
+    app: myweb-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb-frontend
+  template:
+    metadata:
+      name: myweb-frontend
+      labels:
+        app: myweb-frontend
+    spec:
+      containers:
+        - name: myweb-frontend
+          image: gokudera17/frontend_5
+          ports:
+            - containerPort: 8080
+---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: myweb-frontend-service
+    namespace: myweb
+  spec:
+    selector:
+      app: myweb-frontend
+    ports:
+      - protocol: TCP
+        port: 8080
+        targetPort: 8080
