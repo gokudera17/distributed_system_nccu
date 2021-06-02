@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myweb-backend
+  namespace: myweb
+  labels:
+    app: myweb-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb-backend
+  template:
+    metadata:
+      labels:
+        app: myweb-backend
+    spec:
+      containers:
+      - name: myweb-backend
+        image: 109753135/myweb:2.5
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DATABASE_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: mysql-user
+        - name: DATABASE_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: mysql-secret
+              key: mysql-user-password
+        - name: DATABASE
+          valueFrom: 
+            secretKeyRef:
+              name: mysql-secret
+              key: mysql-database
+        - name: MY_SECRET
+          valueFrom: 
+            secretKeyRef:
+              name: mysql-secret
+              key: my-secret
+        - name: HOST
+          valueFrom: 
+            configMapKeyRef:
+              name: mysql-configmap
+              key: database_url
+---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: myweb-backend-service
+    namespace: myweb
+    labels:
+      app: myweb-backend
+  spec:
+    selector:
+      app: myweb-backend 
+    ports:
+      - name: myweb
+        protocol: TCP
+        port: 5000
+        targetPort: 5000
