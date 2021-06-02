@@ -9,9 +9,11 @@
   
 ## Prometheus, Grafana
 * helm install prometheus stable/prometheus-operator
+* Then, you can use 'kubectl port-forward deployment/prometheus-grafana 3000' to forward port and use 'http://localhost:3000' to open Grafana.
 
 ## Fluentd
 * td-agent-gem install fluent-plugin-elasticsearch
+* Then, you can use 'curl -X POST -d 'json={"json":"message"}' to test fluentd.
 
 ## Docker Image (Frontend)
 * docker build -t frontend . 
@@ -20,3 +22,7 @@
 
 ## Kubernetes deploy (Frontend)
 * kubectl create -f myweb-frontend.yaml
+
+
+## Kubernetes deploy (Backend)
+*
