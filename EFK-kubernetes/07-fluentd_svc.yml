@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fluentd-svc
+  namespace: kube-logging
+  labels:
+    app: fluentd
+spec:
+  selector:
+    app: fluentd
+  clusterIP: None
+  ports:
+    - port: 24224
+      name: forward
+    - port: 8888
+      name: http
