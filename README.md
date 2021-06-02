@@ -3,6 +3,7 @@
 * EFK-kubernetes: deploy EFK to k8s
 * Frontend: Vue frontend package with DockerFile
 * Backend: Express backend package
+* k8s-config: yaml file for deployment  
  We separate this project into two parts, **frontend** and **backend**.
 
 # Install
