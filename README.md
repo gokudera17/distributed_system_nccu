@@ -31,4 +31,14 @@ In this section, you can use yaml file in 'k8s-config' to deploy service.
 
 
 ## Kubernetes deploy (Backend)
-*
+* kubectl apply -f myweb-backend.yaml
+* kubectl apply -f servicemonitor-web.yaml
+
+## Kubernetes deploy (Mysql)
+* kubectl apply -f mysql.yaml
+* kubectl apply -f mysql-secret.yaml
+* kubectl apply -f mysql-init-configmap.yaml
+* kubectl apply -f mysql-configmap.yaml
+
+## Kubernetes deploy (Ingress)
+* kubectl apply -f backend-ingress.yaml
