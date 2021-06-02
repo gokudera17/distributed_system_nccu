@@ -7,6 +7,9 @@
 
 # Install
   
+## Kubernetes & Kubernetes Dashboard
+* you can see the README file in the 'K8s' folder and follow the descrptions.
+  
 ## Prometheus, Grafana
 * helm install prometheus stable/prometheus-operator
 * Then, you can use 'kubectl port-forward deployment/prometheus-grafana 3000' to forward port and use 'http://localhost:3000' to open Grafana.
