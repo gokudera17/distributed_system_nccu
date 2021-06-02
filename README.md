@@ -21,7 +21,7 @@
 * docker push gokudera17/ds_frontend
 
 # Deploy
-* In this section, you can use yaml file in 'k8s-config' to deploy service.  
+In this section, you can use yaml file in 'k8s-config' to deploy service.  
   
 ## Kubernetes deploy (Frontend)
 * kubectl create -f myweb-frontend.yaml
