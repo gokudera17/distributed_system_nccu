@@ -16,8 +16,7 @@
 * Then, you can use 'kubectl port-forward deployment/prometheus-grafana 3000' to forward port and use 'http://localhost:3000' to open Grafana.
 
 ## Fluentd
-* td-agent-gem install fluent-plugin-elasticsearch
-* Then, you can use 'curl -X POST -d 'json={"json":"message"}' to test fluentd.
+* you can see the README file in the 'EFK-kubernetes' folder and follow the descrptions.
 
 ## Docker Image (Frontend)
 * docker build -t frontend . 
