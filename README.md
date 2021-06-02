@@ -1,7 +1,9 @@
 # What's in the folder
 * K8s: deploy K8s and nfs server VM environment
 * EFK-kubernetes: deploy EFK to k8s
-We separate this project into two parts, **frontend** and **backend**.
+* Frontend: package with DockerFile
+* Backend: 
+** We separate this project into two parts, **frontend** and **backend**.
 
 ## frontend
 In the **frontend** folder, intro below describes folders in **src**:
